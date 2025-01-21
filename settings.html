@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Reversal Settings</title>
+    <style>
+      body {
+        width: 300px;
+        padding: 16px;
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: #ffffff;
+      }
+      .setting-group {
+        margin-bottom: 16px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #e1e1e1;
+      }
+      select {
+        width: 100%;
+        padding: 4px;
+        margin-bottom: 8px;
+        background-color: #2d2d2d;
+        color: #ffffff;
+        border: 1px solid #404040;
+        border-radius: 4px;
+      }
+      select:focus {
+        outline: none;
+        border-color: #0078d4;
+      }
+      select option {
+        background-color: #2d2d2d;
+        color: #ffffff;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        background-color: #0078d4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      button:hover {
+        background-color: #106ebe;
+      }
+      button:active {
+        background-color: #005a9e;
+      }
+      .status {
+        margin-top: 8px;
+        text-align: center;
+        color: #2ecc71;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="setting-group">
+      <label for="keyboard">Keyboard Layout:</label>
+      <select id="keyboard">
+        <option value="arabic-pc">Arabic - Windows (PC)</option>
+        <option value="arabic-mac">Arabic - Mac</option>
+        <option value="arabic-mac-102">Arabic - Mac (102 keys)</option>
+        <option value="arabic-mac-87">Arabic - Mac (87 keys)</option>
+      </select>
+    </div>
+
+    <div class="setting-group">
+      <label for="shortcut">Reverse Shortcut:</label>
+      <select id="shortcut">
+        <option value="shift">Double Shift Key</option>
+        <option value="command">Double Command/Meta Key (⌘)</option>
+      </select>
+    </div>
+
+    <div class="setting-group">
+      <label for="undo">Undo Shortcut:</label>
+      <select id="undo">
+        <option value="F4">F4</option>
+        <option value="F9">F9</option>
+      </select>
+    </div>
+
+    <button id="save">Save Settings</button>
+    <div id="status" class="status">Settings saved!</div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>

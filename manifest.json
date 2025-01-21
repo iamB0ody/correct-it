@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Correct It",
+  "version": "1.0",
+  "description": "Fix Your Text in a Click!",
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "settings.html"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
