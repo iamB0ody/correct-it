@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/platform-Chrome-90ff6f" alt="Platform" />
 </p>
 
-<img src="assets/icons/icon.svg" width="128" height="128" alt="Correct It Logo">
+<img src="https://raw.githubusercontent.com/iamB0ody/correct-it/main/assets/icons/icon.svg" width="128" height="128" alt="Correct It Logo">
 
 <em style="color: #90ff6f80;">Never worry about wrong keyboard layouts again!</em>
 
