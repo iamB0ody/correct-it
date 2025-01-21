@@ -211,6 +211,107 @@
         opacity: 0.8;
         text-shadow: 0 0 5px #90ff6f40;
       }
+
+      /* Overview Tab Styles */
+      .feature-section {
+        margin-bottom: 48px;
+      }
+
+      .feature-section h2 {
+        font-size: 32px;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      .feature-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      .feature-card {
+        background: #90ff6f10;
+        padding: 24px;
+        border-radius: 8px;
+        border: 1px solid #90ff6f40;
+        transition: all 0.2s;
+      }
+
+      .feature-card:hover {
+        box-shadow: 0 0 15px #90ff6f20;
+        transform: translateY(-2px);
+      }
+
+      .feature-icon {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 16px 0;
+        font-size: 20px;
+      }
+
+      .feature-card ul {
+        margin: 0;
+        padding-left: 20px;
+        opacity: 0.9;
+      }
+
+      .feature-card li {
+        margin-bottom: 8px;
+      }
+
+      .demo-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .demo-step {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 16px;
+        background: #90ff6f10;
+        border-radius: 8px;
+        border: 1px solid #90ff6f40;
+      }
+
+      .demo-step .step-number {
+        width: 32px;
+        height: 32px;
+        background: #90ff6f20;
+        border: 1px solid #90ff6f;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .demo-step p {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .demo-step {
+          flex-direction: column;
+          text-align: center;
+          gap: 16px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -221,12 +322,89 @@
       </div>
 
       <div class="tabs">
-        <button class="tab active" onclick="showTab('setup')">Setup Guide</button>
+        <button class="tab active" onclick="showTab('overview')">Overview</button>
+        <button class="tab" onclick="showTab('setup')">Setup Guide</button>
         <button class="tab" onclick="showTab('test')">Test Area</button>
       </div>
 
+      <!-- Overview Tab -->
+      <div id="overview" class="tab-content active">
+        <div class="feature-section">
+          <h2>What is Correct It?</h2>
+          <p>
+            Correct It is a Chrome extension that instantly fixes text typed with the wrong keyboard layout. If you've ever typed Arabic text while your keyboard was set to English (or vice versa), this extension will save you time by converting the text with just a double-press.
+          </p>
+        </div>
+
+        <div class="feature-section">
+          <h2>Key Features</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🚀</div>
+              <h3>Instant Fixes</h3>
+              <ul>
+                <li>Double-press to fix text</li>
+                <li>Works with any text input</li>
+                <li>Supports selected text or entire field</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">⌨️</div>
+              <h3>Multiple Layouts</h3>
+              <ul>
+                <li>Mac Arabic (Default)</li>
+                <li>Windows Arabic</li>
+                <li>Mac Arabic 102/87 keys</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>Quick Actions</h3>
+              <ul>
+                <li>Double Shift/Ctrl/Alt</li>
+                <li>F4/F9 undo options</li>
+                <li>Visual indicators</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>Privacy First</h3>
+              <ul>
+                <li>Works offline</li>
+                <li>No data collection</li>
+                <li>Open source</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-section">
+          <h2>How It Works</h2>
+          <div class="demo-steps">
+            <div class="demo-step">
+              <div class="step-number">1</div>
+              <p>Type text with wrong keyboard layout</p>
+              <div class="code-block">sghhj → مرحبا</div>
+            </div>
+
+            <div class="demo-step">
+              <div class="step-number">2</div>
+              <p>Double-press Shift (or your chosen shortcut)</p>
+            </div>
+
+            <div class="demo-step">
+              <div class="step-number">3</div>
+              <p>Text is instantly corrected!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Setup Guide Tab -->
-      <div id="setup" class="tab-content active">
+      <div id="setup" class="tab-content">
         <div class="step">
           <div class="step-number">1. Clone Repository</div>
           <p>Clone the repository to your local machine:</p>
