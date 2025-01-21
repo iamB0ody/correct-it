@@ -34,7 +34,8 @@ chrome.storage.onChanged.addListener(function (changes) {
 
 // Track last key press for each key type
 let lastShiftPress = 0
-let lastCommandPress = 0
+let lastCtrlPress = 0
+let lastAltPress = 0
 
 document.addEventListener("keydown", function (event) {
   // Handle reverse shortcut
@@ -42,20 +43,37 @@ document.addEventListener("keydown", function (event) {
     const currentTime = new Date().getTime()
 
     // Check for Shift or Command (Meta) key based on settings
-    const isShortcutKey = (settings.shortcut === "shift" && event.key === "Shift") || (settings.shortcut === "command" && (event.key === "Meta" || event.metaKey))
+    const isShortcutKey = (settings.shortcut === "shift" && event.key === "Shift") || (settings.shortcut === "ctrl" && event.key === "Control") || (settings.shortcut === "alt" && event.key === "Alt")
 
     if (isShortcutKey) {
-      const lastPress = event.key === "Shift" ? lastShiftPress : lastCommandPress
+      let lastPress
+      switch (event.key) {
+        case "Shift":
+          lastPress = lastShiftPress
+          break
+        case "Control":
+          lastPress = lastCtrlPress
+          break
+        case "Alt":
+          lastPress = lastAltPress
+          break
+      }
 
       if (currentTime - lastPress <= DOUBLE_PRESS_DELAY) {
         handleTextReversal()
       }
 
       // Update the last press time
-      if (event.key === "Shift") {
-        lastShiftPress = currentTime
-      } else {
-        lastCommandPress = currentTime
+      switch (event.key) {
+        case "Shift":
+          lastShiftPress = currentTime
+          break
+        case "Control":
+          lastCtrlPress = currentTime
+          break
+        case "Alt":
+          lastAltPress = currentTime
+          break
       }
     }
 
