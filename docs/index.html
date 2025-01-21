@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Correct It - Test Page</title>
+    <title>Correct It - Documentation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
@@ -43,6 +43,80 @@
         font-size: 18px;
       }
 
+      /* Tabs Styling */
+      .tabs {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #90ff6f40;
+      }
+
+      .tab {
+        padding: 12px 24px;
+        background: transparent;
+        border: none;
+        color: #90ff6f80;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+      }
+
+      .tab.active {
+        color: #90ff6f;
+      }
+
+      .tab.active::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #90ff6f;
+        box-shadow: 0 0 10px #90ff6f80;
+      }
+
+      .tab:hover {
+        color: #90ff6f;
+        text-shadow: 0 0 5px #90ff6f40;
+      }
+
+      /* Tab Content */
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Installation Guide */
+      .step {
+        margin-bottom: 32px;
+        padding: 24px;
+        background: #90ff6f10;
+        border-radius: 8px;
+        border: 1px solid #90ff6f40;
+      }
+
+      .step-number {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+
+      .code-block {
+        background: #011025;
+        padding: 16px;
+        border-radius: 4px;
+        font-family: monospace;
+        margin: 16px 0;
+        border: 1px solid #90ff6f40;
+      }
+
+      /* Test Area (existing styles) */
       .test-area {
         margin-bottom: 40px;
       }
@@ -140,36 +214,79 @@
         <div class="logo-text">⌨️ Correct It</div>
       </div>
 
-      <div class="subtitle">Test the extension by typing or pasting text in wrong keyboard layout</div>
-
-      <div class="test-area">
-        <textarea placeholder="Type or paste your text here..."></textarea>
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('setup')">Setup Guide</button>
+        <button class="tab" onclick="showTab('test')">Test Area</button>
       </div>
 
-      <div class="examples">
-        <div class="example-item">
-          <div class="example-label">English layout on Arabic keyboard:</div>
-          <div class="example-text">
-            <div>sghhj</div>
-            <div class="arrow">→</div>
-            <div>مرحبا</div>
+      <!-- Setup Guide Tab -->
+      <div id="setup" class="tab-content active">
+        <div class="step">
+          <div class="step-number">1. Clone Repository</div>
+          <p>Clone the repository to your local machine:</p>
+          <div class="code-block">git clone https://github.com/iamB0ody/correct-it.git</div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2. Open Chrome Extensions</div>
+          <p>Navigate to Chrome's extensions page:</p>
+          <div class="code-block">chrome://extensions/</div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3. Enable Developer Mode</div>
+          <p>Toggle the "Developer mode" switch in the top-right corner</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4. Load Extension</div>
+          <p>Click "Load unpacked" and select the extension directory</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">5. Configure Settings</div>
+          <p>Click the extension icon to configure:</p>
+          <ul>
+            <li>Keyboard Layout (Mac/Windows)</li>
+            <li>Shortcut (Shift/Ctrl/Alt)</li>
+            <li>Undo Key (F4/F9)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Test Area Tab -->
+      <div id="test" class="tab-content">
+        <div class="subtitle">Test the extension by typing or pasting text in wrong keyboard layout</div>
+
+        <div class="test-area">
+          <textarea placeholder="Type or paste your text here..."></textarea>
+        </div>
+
+        <div class="examples">
+          <div class="example-item">
+            <div class="example-label">English layout on Arabic keyboard:</div>
+            <div class="example-text">
+              <div>sghhj</div>
+              <div class="arrow">→</div>
+              <div>مرحبا</div>
+            </div>
+          </div>
+
+          <div class="example-item">
+            <div class="example-label">Arabic layout on English keyboard:</div>
+            <div class="example-text">
+              <div>ىثممخ</div>
+              <div class="arrow">→</div>
+              <div>hello</div>
+            </div>
           </div>
         </div>
 
-        <div class="example-item">
-          <div class="example-label">Arabic layout on English keyboard:</div>
-          <div class="example-text">
-            <div>ىثممخ</div>
-            <div class="arrow">→</div>
-            <div>hello</div>
-          </div>
+        <div class="shortcuts">
+          Press <span class="shortcut-key">Double Shift</span> to fix text
+          <br />
+          Press <span class="shortcut-key">F4</span> to undo
         </div>
-      </div>
-
-      <div class="shortcuts">
-        Press <span class="shortcut-key">Double Shift</span> to fix text
-        <br />
-        Press <span class="shortcut-key">F4</span> to undo
       </div>
 
       <div class="credits">
@@ -178,5 +295,25 @@
         <a href="https://github.com/iamB0ody/correct-it" target="_blank">View on GitHub</a>
       </div>
     </div>
+
+    <script>
+      function showTab(tabId) {
+        // Hide all tab contents
+        document.querySelectorAll(".tab-content").forEach((content) => {
+          content.classList.remove("active")
+        })
+
+        // Deactivate all tabs
+        document.querySelectorAll(".tab").forEach((tab) => {
+          tab.classList.remove("active")
+        })
+
+        // Show selected tab content
+        document.getElementById(tabId).classList.add("active")
+
+        // Activate selected tab
+        event.target.classList.add("active")
+      }
+    </script>
   </body>
 </html>
