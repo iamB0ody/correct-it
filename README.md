@@ -112,7 +112,7 @@ Contributions are welcome! Feel free to:
 
 ## 📝 License
 
-MIT © [Abdulrahman Elheyb](https://github.com/iamB0ody)
+MIT © [Abdulrahman Ahmed](https://github.com/iamB0ody)
 
 ---
 
