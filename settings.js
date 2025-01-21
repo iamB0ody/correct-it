@@ -1,3 +1,5 @@
+console.log("Settings popup loaded")
+
 // Default settings
 const DEFAULT_SETTINGS = {
   keyboard: "arabic-pc",

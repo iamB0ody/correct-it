@@ -1,16 +1,18 @@
 <div align="center">
    
-# ⌨️ Correct It
+<h1 style="color: #90ff6f; text-shadow: 0 0 15px #90ff6f40;">⌨️ Correct It</h1>
 
-> 🔄 Fix your keyboard layout mistakes instantly!
+<p style="color: #90ff6f80; font-size: 18px;">🔄 Fix your keyboard layout mistakes instantly!</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![Version](https://img.shields.io/badge/version-1.0-green)
-![Platform](https://img.shields.io/badge/platform-Chrome-yellow)
+<p>
+  <img src="https://img.shields.io/badge/License-MIT-90ff6f.svg" alt="License: MIT" />
+  <img src="https://img.shields.io/badge/version-1.0-90ff6f" alt="Version" />
+  <img src="https://img.shields.io/badge/platform-Chrome-90ff6f" alt="Platform" />
+</p>
 
 <img src="assets/icons/icon.svg" width="128" height="128" alt="Correct It Logo">
 
-*Never worry about wrong keyboard layouts again!*
+<em style="color: #90ff6f80;">Never worry about wrong keyboard layouts again!</em>
 
 </div>
 
@@ -22,6 +24,8 @@
 - Transform wrongly typed text with a double-press
 - Smart detection of keyboard layout mistakes
 - Works with any text input field
+- Supports selected text or entire input
+- Visual indicator when text is corrected
 
 ⌨️ **Multiple Layouts**
 - Windows Arabic keyboard
@@ -30,14 +34,25 @@
 - Mac Arabic 87-key layout
 
 ⚡ **Quick Actions**
-- Double Shift (default) or Command shortcut
+- Multiple shortcut options:
+  - Double Shift (default)
+  - Double Ctrl
+  - Double Alt
 - F4/F9 undo options
 - Customizable shortcuts
 
 🎨 **Modern Interface**
 - Sleek dark mode settings
+- Neon green theme
+- Modern Space Grotesk font
 - Easy-to-use configuration
 - Clean and intuitive design
+
+🛡️ **Privacy & Performance**
+- Works offline
+- No data collection
+- Lightweight and fast
+- Open source
 
 ## 🛠️ Installation
 
@@ -71,7 +86,8 @@ git clone https://github.com/iamB0ody/correct-it.git
 
 ### Shortcuts
 - `Double Shift` (Default)
-- `Double Command/Meta Key (⌘)`
+- `Double Ctrl Key`
+- `Double Alt Key`
 
 ### Undo Options
 - `F4` (Default)
@@ -99,6 +115,7 @@ correct-it/
 ├── content.js         # Core functionality
 ├── settings.html      # Settings UI
 ├── settings.js        # Settings logic
+├── test.html         # Test page
 └── assets/
     └── icons/        # Extension icons
 ```
@@ -107,12 +124,12 @@ correct-it/
 
 Contributions are welcome! Feel free to:
 - 🐛 Report bugs
-- �� Suggest features
+- 💡 Suggest features
 - 🔧 Submit pull requests
 
 ## 📝 License
 
-MIT © [Abdulrahman Ahmed](https://github.com/iamB0ody)
+MIT © [Abdelrahman Ahmed](https://github.com/iamB0ody)
 
 ---
 

@@ -1,11 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Correct It - Test Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Space Grotesk", sans-serif;
+        background-color: #011025;
+        color: #90ff6f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .logo-text {
+        font-size: 48px;
+        font-weight: bold;
+        color: #90ff6f;
+        text-shadow: 0 0 15px #90ff6f40;
+        letter-spacing: 1px;
+      }
+
+      .subtitle {
+        text-align: center;
+        margin-bottom: 40px;
+        opacity: 0.8;
+        font-size: 18px;
+      }
+
+      .test-area {
+        margin-bottom: 40px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 150px;
+        padding: 16px;
+        background-color: #011025;
+        color: #90ff6f;
+        border: 1px solid #90ff6f;
+        border-radius: 8px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 16px;
+        resize: vertical;
+        transition: all 0.2s;
+      }
+
+      textarea:focus {
+        outline: none;
+        box-shadow: 0 0 15px #90ff6f40;
+      }
+
+      .examples {
+        background: #90ff6f10;
+        padding: 24px;
+        border-radius: 8px;
+        border: 1px solid #90ff6f40;
+      }
+
+      .example-item {
+        margin-bottom: 24px;
+      }
+
+      .example-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .example-label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #90ff6f;
+      }
+
+      .example-text {
+        display: flex;
+        gap: 24px;
+        padding: 12px;
+        background: #011025;
+        border-radius: 4px;
+      }
+
+      .arrow {
+        color: #90ff6f80;
+      }
+
+      .shortcuts {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #90ff6f40;
+      }
+
+      .shortcut-key {
+        display: inline-block;
+        padding: 4px 12px;
+        background: #90ff6f20;
+        border: 1px solid #90ff6f;
+        border-radius: 4px;
+        margin: 0 4px;
+      }
+
+      .credits {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 14px;
+        color: #90ff6f80;
+      }
+
+      .credits a {
+        color: #90ff6f;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .credits a:hover {
+        opacity: 0.8;
+        text-shadow: 0 0 5px #90ff6f40;
+      }
+    </style>
   </head>
   <body>
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-text">⌨️ Correct It</div>
+      </div>
+
+      <div class="subtitle">Test the extension by typing or pasting text in wrong keyboard layout</div>
+
+      <div class="test-area">
+        <textarea placeholder="Type or paste your text here..."></textarea>
+      </div>
+
+      <div class="examples">
+        <div class="example-item">
+          <div class="example-label">English layout on Arabic keyboard:</div>
+          <div class="example-text">
+            <div>sghhj</div>
+            <div class="arrow">→</div>
+            <div>مرحبا</div>
+          </div>
+        </div>
+
+        <div class="example-item">
+          <div class="example-label">Arabic layout on English keyboard:</div>
+          <div class="example-text">
+            <div>ىثممخ</div>
+            <div class="arrow">→</div>
+            <div>hello</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shortcuts">
+        Press <span class="shortcut-key">Double Shift</span> to fix text
+        <br />
+        Press <span class="shortcut-key">F4</span> to undo
+      </div>
+
+      <div class="credits">
+        Created by <a href="https://abdelrahman.site/" target="_blank">Abdelrahman Ahmed</a>
+        <br />
+        <a href="https://github.com/iamB0ody/correct-it" target="_blank">View on GitHub</a>
+      </div>
+    </div>
   </body>
 </html>

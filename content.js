@@ -9,7 +9,31 @@ function debug(message, data = null) {
   console.log(debugMsg, data || "")
 }
 
-document.addEventListener("DOMContentLoaded", function () {})
+document.addEventListener("DOMContentLoaded", function () {
+  // Create and style the indicator element
+  const indicator = document.createElement("div")
+  indicator.textContent = "Correct It"
+  indicator.style.cssText = `
+    position: fixed;
+    background-color: #011025;
+    color: #90ff6f;
+    border: 1pt solid #90ff6f;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 999999;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transform: translateX(-50%);
+  `
+  document.body.appendChild(indicator)
+
+  // Make indicator available globally
+  window.correctItIndicator = indicator
+})
 
 // Load settings
 chrome.storage.sync.get(
@@ -88,6 +112,19 @@ function handleTextReversal() {
   const activeElement = document.activeElement
 
   if (isTextInput(activeElement)) {
+    // Show indicator above the input
+    const rect = activeElement.getBoundingClientRect()
+    if (window.correctItIndicator) {
+      window.correctItIndicator.style.left = `${rect.left + rect.width / 2}px`
+      window.correctItIndicator.style.top = `${rect.top - 25}px`
+      window.correctItIndicator.style.opacity = "1"
+
+      // Hide indicator after 1 second
+      setTimeout(() => {
+        window.correctItIndicator.style.opacity = "0"
+      }, 500)
+    }
+
     // Save current state for undo
     undoStack.push({
       element: activeElement,
