@@ -2,7 +2,7 @@ console.log("Settings popup loaded")
 
 // Default settings
 const DEFAULT_SETTINGS = {
-  keyboard: "arabic-pc",
+  keyboard: "arabic-mac",
   shortcut: "shift",
   undo: "F4",
 }

@@ -28,8 +28,8 @@
 - Visual indicator when text is corrected
 
 ⌨️ **Multiple Layouts**
+- Mac Arabic keyboard (Standard) (Default)
 - Windows Arabic keyboard
-- Mac Arabic keyboard (Standard)
 - Mac Arabic 102-key layout
 - Mac Arabic 87-key layout
 
@@ -79,8 +79,8 @@ git clone https://github.com/iamB0ody/correct-it.git
 <summary>Available Settings</summary>
 
 ### Keyboard Layouts
+- `Arabic - Mac` (Default)
 - `Arabic - Windows (PC)`
-- `Arabic - Mac`
 - `Arabic - Mac (102 keys)`
 - `Arabic - Mac (87 keys)`
 
